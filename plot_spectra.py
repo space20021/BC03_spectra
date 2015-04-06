@@ -195,11 +195,11 @@ for i in filt:
         freq_low=float(i[1])
         freq_high=float(i[2])
         sensitivity=float(i[3])
+        if (freq_high-freq_low<500):
+            sys.exit("*** ERROR: Reference bandpass must be at least 500A wide. ***")
+        if (freq_high<100*(1+z)):
+            sys.exit("*** ERROR: Wavelength of the reference filter is too short. ***")
         break
-if (freq_high-freq_low<500):
-    sys.exit("*** ERROR: Reference bandpass must be at least 500A wide. ***")
-if (freq_high<100*(1+z)):
-    sys.exit("*** ERROR: Wavelength of the reference filter is too short. ***")
 if freq_low:
     for j in range(18):
         xs=[]
