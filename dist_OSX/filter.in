@@ -1,0 +1,5 @@
+# Name        freq_low(A)    freq_high(A)    sensitivity(mag)    ref.filter?(max:1)
+  Ks          19577.92       23431.05        25.5                y
+  test        5000           9000            23                  
+  test2       1600           2100            22                  
+  asdsss      2342           5000            11                  

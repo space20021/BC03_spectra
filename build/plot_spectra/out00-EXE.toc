@@ -1,0 +1,9 @@
+('/Users/judi/Desktop/BC03_spectra/dist/plot_spectra',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1428342384)
