@@ -1,29 +1,50 @@
++------------------------------------+
+|                                    |
+|   BC03_spectra        ver 1.0      |
+|                                    |
+|                 by Chou, Ti-Lin    |
+|                       2015/4/23    |
++------------------------------------+
+
+
+
+This program plots the BC03 spectra that are already stored under ./data/ according to a specified redshift along with filter response curves.
+
+
+
 # Installation:
 
-
+Simply extract and execute from terminal. No installation is needed.
+For Ubuntu users, cd into ./dist_Ubuntu/ and run ./BC03_spectra
+For MAC OS X users, cd into ./dist_OSX/ and run ./BC03_spectra
+Those using other operating systems may need to compile the source code in ./src/ by yourself.
+(Requirements: Python 2.7, numpy, and matplotlib packages)
 
 
 
 # Program:
-The program will ask you to input two parameters.
-The first one is the redshift of the galaxy you want to examine.
-The second one is an option whether to display the positions (frequencies) of the Lyman breaks (Lyman limit at 912A and Lyman alpha at 1216A) and the Balmer break (3646A). Default is ’N’ (No).
 
-The program will then display the spectra of galaxies, which are computed by the BC03 synthesized stellar population model.
+The program will ask you to input three options.
+The first one is the redshift of the galaxies you want to examine.
+The second one is the stellar mass of the galaxies (units in log solar masses). Only 9 or 10 are available.
+The third one is an option whether to display the positions of the Lyman/Balmer breaks at their corresponding wavelengths and redshift. (Lyman: 912A and 1216A, Balmer: 3646A). Default is ’N’ (No).
+
+The program will then display the spectra of galaxies, which are computed by the BC03 SSP model beforehand, with filter curves overlying on top (described in the next section).
 Dust extinction is not applied, meaning these are all “dust-free” spectra.
 The exponential decay timescales of the star formation rate of the galaxies, denoted by “tau”, are 0.1, 0.3, and 1 Gyr respectively, as shown on the title of each panel.
 In each panel, spectra of galaxies at different ages are drawn in different colors.
 
-To interact with the figure, first click the 4-way arrow icon at the bottom left control panel.
+To interact with the figure, first click the 4-way cross-shaped arrow icon on the control panel.
 Now, to pan the figure, simply drag it with the left mouse button.
-Zooming can be done by dragging with the right mouse button.
+To zoom the figure, drag it with the right mouse button.
 
 
 
+# Filter files:
 
-# Filter file:
-The information of the filters should be written into the text file “filter.in”.
-Lines starting with ‘#’ will be ignored.
-In each line, use at least one space to separate each column. Alignment is not required.
+The information of the filters should be written into the text files “FILTER.RES” and “filters.log”.
 
-Reference filter...
+The format of “FILTER.RES” is exactly the same as that used in HyperZ, which stores the response functions of the filters. You can add your own filters appending their transmission functions at the end of the file according to the following format: the first line must contain the number of points forming the transmission function, and the name of the filter (optional). The subsequent lines must contain in the first column the number of the point, in column two the wavelength in Å and in column three the value of the transmission. Notice that the points must be ordered by increasing wavelengths. Moreover, do not care about the normalization of the transmission functions, because this operation will be performed internally in the program.
+
+“filters.log”........
+Lines starting with ‘#’ or ‘-‘ will be ignored.
