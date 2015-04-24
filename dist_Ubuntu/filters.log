@@ -1,0 +1,12 @@
+    #   Filter                                                 sensitivity(mag)
+---------------------------------------------------------------------------------
+     1 [UltraVISTA] Ks                                           25
+     5 [CFHT] u                                                  28
+     6 [Subaru] zp                                               26
+    21 [Spitzer] SPLASH_1                                        24
+    22 [Spitzer] SPLASH_2                                        24
+    23 [Spitzer] SPLASH_3                                        24
+    24 [Spitzer] SPLASH_4                                        24
+    25 GALEX NUV                                                 28
+    26 Subaru r+(suprime-cam)                                   27
+    27 UKIRT/WFCAM J                                             25
