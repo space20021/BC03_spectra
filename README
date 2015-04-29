@@ -1,6 +1,6 @@
 +------------------------------------+
 |                                    |
-|   BC03_spectra        ver 1.0      |
+|   BC03_spectra        ver 1.1      |
 |                                    |
 |                 by Chou, Ti-Lin    |
 |                       2015/4/23    |
@@ -46,5 +46,11 @@ The information of the filters should be written into the text files “FILTER.R
 
 The format of “FILTER.RES” is exactly the same as that used in HyperZ, which stores the response functions of the filters. You can add your own filters appending their transmission functions at the end of the file according to the following format: the first line must contain the number of points forming the transmission function, and the name of the filter (optional). The subsequent lines must contain in the first column the number of the point, in column two the wavelength in Å and in column three the value of the transmission. Notice that the points must be ordered by increasing wavelengths. Moreover, do not care about the normalization of the transmission functions, because this operation will be performed internally in the program.
 
-“filters.log”........
+On the other hand, the format of “filters.log” is a little bit different from HyperZ.
+In HyperZ, filters.log is not used in the program; it’s just a reminder for the user.
+But here we select what filters to plot according to filters.log
+Each line must start with an integer (i), to indicate that the i-th filter in FILTER.RES be plotted.
+What follows next is the name of the filter, which will be annotated in the plot.
+The line must end with a float number which indicates the sensitivity of the filter.
 Lines starting with ‘#’ or ‘-‘ will be ignored.
+All the filter response curves stated in filters.log will be plotted overlapping the spectra, with the zero point on the y-axis chosen to be equal to the “sensitivity” parameter, and the vertical height is scaled to 4 mags by default.
